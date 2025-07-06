@@ -27,7 +27,12 @@ public:
     int count(int tot) {
         int ans=0;
         for(int i=0;i<v1.size();i++){
-            ans+=freq[tot-v1[i]];
+            int rem=tot-v1[i];
+            if(freq.count(rem)>0){
+
+                ans+=freq[rem];
+
+            }
         }
         return ans;
     }
