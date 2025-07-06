@@ -2,14 +2,17 @@ class FindSumPairs {
 public:
 
     vector<int> v1,v2;
-    unordered_map<int,int> freq;
+    unordered_map<int,int> freq1,freq2;
     FindSumPairs(vector<int>& nums1, vector<int>& nums2) {
         v1=nums1;
         v2=nums2;
 
-        //stores freq of nums2
+        //stores freq of nums2 and nums1
         for(auto i:v2){
-            freq[i]++;
+            freq2[i]++;
+        }
+        for(auto i:v1){
+            freq1[i]++;
         }
 
 
@@ -17,20 +20,20 @@ public:
     
     void add(int index, int val) {
 
-        freq[v2[index]]--;//decrementing the old value freq
+        freq2[v2[index]]--;//decrementing the old value freq
 
         v2[index]+=val;
 
-        freq[v2[index]]++;//incrementing new value
+        freq2[v2[index]]++;//incrementing new value
     }
     
     int count(int tot) {
         int ans=0;
-        for(int i=0;i<v1.size();i++){
-            int rem=tot-v1[i];
-            if(freq.count(rem)>0){
+        for(auto &[k,v]:freq1){ 
+            int rem=tot-k;
+            if(freq2.count(rem)>0){
 
-                ans+=freq[rem];
+                ans+=v*freq2[rem];
 
             }
         }
