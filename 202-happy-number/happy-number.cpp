@@ -12,7 +12,7 @@ public:
             }
             n=new_num;
         }
-        if(n==1||n==7)
+        if(n==1 || n==7)
         return true;
 
         return false;
