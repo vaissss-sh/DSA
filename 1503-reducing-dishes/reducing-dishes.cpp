@@ -59,9 +59,9 @@ public:
         // vector<vector<int>> dp(n,vector<int>(n+1,-1));
         // return solvemem(satisfaction,0,1,dp);
 
-        return solvetab(satisfaction);
+        //return solvetab(satisfaction);
 
-        // return spaceopt(satisfaction);
+        return spaceopt(satisfaction);
 
         // int currSum = 0, total = 0;
 
