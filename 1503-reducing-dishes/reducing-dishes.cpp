@@ -61,18 +61,18 @@ public:
 
         //return solvetab(satisfaction);
 
-        return spaceopt(satisfaction);
+        //return spaceopt(satisfaction);
 
-        // int currSum = 0, total = 0;
+        int currSum = 0, total = 0;
 
-        // for (int i = satisfaction.size() - 1; i >= 0; i--) {
-        //     if (currSum + satisfaction[i] > 0) {
-        //         currSum += satisfaction[i];
-        //         total += currSum;
-        //     } else {
-        //         break;
-        //     }
-        // }
-        // return total;
+        for (int i = satisfaction.size() - 1; i >= 0; i--) {
+            if (currSum + satisfaction[i] > 0) {
+                currSum += satisfaction[i];
+                total += currSum;
+            } else {
+                break;
+            }
+        }
+        return total;
     }
 };
