@@ -87,7 +87,7 @@ public:
         return max(case1, case2);
     }
     int maxSizeSlices(vector<int>& nums) {
-        int k = nums.size();
+        //int k = nums.size();
         //There will  be 2 cases
         //where you will start from the first index, if you start with 1, you will not able to eat 6th index one
         //2nd case
@@ -101,14 +101,14 @@ public:
         // return max(case1, case2);
         
         //MEMORISATION
-        vector<vector<int>>dp1(k + 1, vector<int>(k, -1));
-        int case1 = solveMem(0, k-2, nums, k/3, dp1);
-        vector<vector<int>>dp2(k + 1, vector<int>(k, -1));
-        int case2 = solveMem(1, k-1, nums, k/3, dp2);
+        // vector<vector<int>>dp1(k + 1, vector<int>(k, -1));
+        // int case1 = solveMem(0, k-2, nums, k/3, dp1);
+        // vector<vector<int>>dp2(k + 1, vector<int>(k, -1));
+        // int case2 = solveMem(1, k-1, nums, k/3, dp2);
 
-        return max(case1, case2);
+        // return max(case1, case2);
 
 
-        //return solve(nums);
+        return solve(nums);
     }
 };
