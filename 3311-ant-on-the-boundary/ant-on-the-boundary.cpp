@@ -1,15 +1,12 @@
 class Solution {
 public:
     int returnToBoundaryCount(vector<int>& nums) {
-        int pos = nums[0];
-        int n = nums.size();
-        int count = 0;
-        for (int i = 1; i < n; i++) {
-            if (pos + nums[i] == 0)
-                count++;
-            pos = pos + nums[i];
+        int sum=0;
+        int cnt=0;
+        for(int i=0;i<nums.size();i++){
+            sum=sum+(nums[i]);
+            if(sum==0) cnt++;
         }
-
-        return count;
+        return cnt;
     }
 };
